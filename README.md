@@ -8,19 +8,23 @@
 |---|---|
 | **OS** | Artix Linux |
 | **WM** | Niri |
-| **Shell** | Noctalia |
+| **Shell** | noctalia |
 | **Font** | FiraCode Nerd Font |
-| **Terminal** | Foot |
-| **Launcher** | Fuzzel |
+| **Terminal** | foot |
+| **Launcher** | fuzzel |
 
 ## Themed
-- Foot
-- Fuzzel
-- Noctalia
+- foot
+- fuzzel
+- noctalia
 
 ## User configured
-- Niri keybinds
+- niri keybinds/config
 - Any other apps
 
 ## Wallpaper
-`assets/lunar-tides-3840x2160.jpg`
+in assets, wallpaper preview
+
+<img width="1920" height="1080" alt="lunar-tides-3840x2160-26444" src="https://github.com/user-attachments/assets/9da6cb9e-11c7-4623-968e-e5290e1e9ac9" />
+
+
