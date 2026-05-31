@@ -1,0 +1,141 @@
+prefer-no-csd
+
+input {
+    keyboard {
+        repeat-delay 300
+        repeat-rate 25
+        xkb {
+        }
+        numlock
+    }
+    touchpad {
+        tap
+    }
+    mouse {
+    }
+    trackpoint {
+    }
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+/-output "eDP-1" {
+    mode "3840x2160@60.02"
+    scale 2
+    transform "normal"
+    position x=1920 y=0
+}
+
+environment {
+    XCURSOR_THEME "Capitaine Cursors (Palenight)"
+    XCURSOR_SIZE "34"
+}
+
+layout {
+    gaps 10
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        width 1.5
+        off
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+    border {
+        on
+        width 2
+        active-color "#505050"
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+    }
+    shadow {
+        on
+        softness 15
+        spread 4
+        offset x=0 y=5
+        color "#0007"
+    }
+    struts {
+    }
+}
+
+window-rule {
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+workspace "c" {
+}
+workspace "b" {
+}
+workspace "a" {
+}
+
+window-rule {
+    match title="zen-browser"
+    open-on-workspace "a"
+    open-maximized true
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "pipewire"
+spawn-at-startup "pipewire-pulse"
+spawn-at-startup "wireplumber"
+spawn-at-startup "sh" "-c" "sudo evremap remap /home/mtx/.config/evremap/config.toml"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+}
+
+binds {
+    Alt+Shift+Slash { show-hotkey-overlay; }
+    Alt+B          { spawn "zen-browser"; }
+    Alt+Return     { spawn "foot"; }
+    Alt+D          { spawn "fuzzel"; }
+    Super+Alt+L    { spawn "swaylock"; }
+    XF86AudioRaiseVolume  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute         { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute      { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86MonBrightnessUp   { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    Alt+O          { toggle-overview; }
+    Alt+Q          { close-window; }
+    Alt+Left       { focus-column-left; }
+    Alt+Down       { focus-window-down; }
+    Alt+Up         { focus-window-up; }
+    Alt+Right      { focus-column-right; }
+    Alt+F          { maximize-column; }
+    Alt+H          { focus-column-left; }
+    Alt+J          { focus-window-down; }
+    Alt+K          { focus-window-up; }
+    Alt+L          { focus-column-right; }
+    Alt+Shift+E    { quit; }
+}
+
+include "./noctalia.kdl"
