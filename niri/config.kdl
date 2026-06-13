@@ -18,7 +18,7 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-/-output "eDP-1" {
+output "eDP-1" {
     mode "3840x2160@60.02"
     scale 2
     transform "normal"
