@@ -1,0 +1,27 @@
+# Ring
+ring-color=3C4249ff
+ring-clear-color=5D6269ff
+ring-ver-color=5D6269ff
+ring-wrong-color=3C4249ff
+
+# Inside
+inside-color=11151Cee
+inside-clear-color=181E24ee
+inside-ver-color=181E24ee
+inside-wrong-color=181E24ee
+
+# Text
+text-color=D5D9DEff
+text-clear-color=D5D9DEff
+text-ver-color=D5D9DEff
+text-wrong-color=D5D9DEff
+
+# Highlights
+key-hl-color=5D6269ff
+bs-hl-color=82888Eff
+
+# Borders
+line-color=00000000
+separator-color=00000000
+effect-blur=5x3
+image=/home/mtx/Downloads/lunar-tides-3840x2160-26444.jpg
